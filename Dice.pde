@@ -5,13 +5,16 @@ void setup()
 	background(0);
 	fill(255,0,0);
 	rect(20,20,360,360);
-	rock = new Die(200,200);
 	noLoop();
 }
 void draw()
 {
-	rock.roll();
-	rock.show();
+	for(int row = 100; row <=380; row =row + 100)
+	{	
+		rock = new Die(row,200);
+		rock.roll();
+		rock.show();
+	}
 }
 void mousePressed()
 {
@@ -32,7 +35,7 @@ class Die //models one single dice cube
 	}
 	void roll()
 	{
-		dots = 1;
+		dots = ((int)(Math.random()*6)+1);
 	}
 	void show()
 	{	
@@ -55,14 +58,35 @@ class Die //models one single dice cube
 			ellipse(myX+25,myY+25,10,10);
 			ellipse(myX+15,myY+15,10,10);
 			ellipse(myX+35,myY+35,10,10);
-		
+		}		
 		if(dots == 4)
 		{
 			fill(0);
 			ellipse(myX+35,myY+35,10,10);
 			ellipse(myX+15,myY+15,10,10);
-			ellipse(myX+35,myY+35,10,10);
+			ellipse(myX+35,myY+15,10,10);
+			ellipse(myX+15,myY+35,10,10);
 		}
-	}
+		if(dots == 5)
+		{
+			fill(0);
+			ellipse(myX+35,myY+35,10,10);
+			ellipse(myX+15,myY+15,10,10);
+			ellipse(myX+35,myY+15,10,10);
+			ellipse(myX+15,myY+35,10,10);
+			ellipse(myX+25,myY+25,10,10);
+		}
+		if(dots == 6)
+		{
+			fill(0);
+			ellipse(myX+40,myY+35,10,10);
+			ellipse(myX+10,myY+15,10,10);
+			ellipse(myX+40,myY+15,10,10);
+			ellipse(myX+10,myY+35,10,10);
+			ellipse(myX+25,myY+15,10,10);
+			ellipse(myX+25,myY+35,10,10);
+
+		}
+
 	}
 }
