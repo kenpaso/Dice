@@ -1,4 +1,5 @@
 Die rock;
+int amount;
 void setup()
 {
 	size(400,400);
@@ -9,16 +10,28 @@ void setup()
 }
 void draw()
 {
-	for(int row = 100; row <=380; row =row + 100)
+	for(int column =100; column <=380; column = column + 100)
 	{	
-		rock = new Die(row,200);
-		rock.roll();
-		rock.show();
+		for(int row = 100; row <=380; row =row + 100)
+		{	
+			rock = new Die(row,column);
+			rock.roll();
+			rock.show();
+		}
 	}
+	fill(255,0,0);
+	noStroke();
+	rect(125,340,150,25);	
+	fill(0);
+	textSize(23);
+	text("AMOUNT:"+  amount,130,363);
+
 }
 void mousePressed()
 {
 	redraw();
+	amount = 0;
+	
 }
 class Die //models one single dice cube
 {
@@ -36,10 +49,12 @@ class Die //models one single dice cube
 	void roll()
 	{
 		dots = ((int)(Math.random()*6)+1);
+		amount = amount + dots;
+
 	}
 	void show()
 	{	
-		fill(255);
+		fill(255,0,0);
 		rect(myX,myY,50,50);		
 		if(dots == 1)
 		{
