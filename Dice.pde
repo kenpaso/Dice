@@ -54,7 +54,7 @@ class Die //models one single dice cube
 	}
 	void show()
 	{	
-		fill(255,0,0);
+		fill(0,0,0);
 		rect(myX,myY,50,50);		
 		if(dots == 1)
 		{
