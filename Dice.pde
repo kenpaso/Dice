@@ -24,7 +24,7 @@ void draw()
 	rect(125,340,150,25);	
 	fill(0);
 	textSize(23);
-	text("AMOUNT:"+  amount,130,363);
+	text("AMOUNT:"+  amount,133,363);
 
 }
 void mousePressed()
