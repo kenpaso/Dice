@@ -19,7 +19,7 @@ void draw()
 			rock.show();
 		}
 	}
-	fill(255,0,0);
+	fill(255,255,255);
 	noStroke();
 	rect(125,340,150,25);	
 	fill(0);
@@ -54,7 +54,7 @@ class Die //models one single dice cube
 	}
 	void show()
 	{	
-		fill(0,0,0);
+		fill(255,255,255);
 		rect(myX,myY,50,50);		
 		if(dots == 1)
 		{
