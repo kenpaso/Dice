@@ -4,7 +4,7 @@ void setup()
 {
 	size(400,400);
 	background(0);
-	fill(255,0,0);
+	fill(0,102,0);
 	rect(20,20,360,360);
 	noLoop();
 }
